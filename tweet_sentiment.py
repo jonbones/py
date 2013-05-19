@@ -22,8 +22,8 @@ def set_tweets():
 	value = 0
 	for line in tweet_file:
 		t = json.loads(line)
-		#if t.get("lang") == "en":
-		data.append(t.get("text"))
+		if t.get("lang") == "en":
+			data.append(t.get("text"))
 	for line in data:
 		for word in line.split():
 			if word.encode('utf-8') in scores.keys(): value = value + scores[word]
