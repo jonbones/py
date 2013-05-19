@@ -1,5 +1,6 @@
 #Jonathan S. Chandranathan
-#Find the top ten most popular hash tags in a given feed sample.
+#Scraping for hash tags.  Would like to turn this into a way to search for most popular hash tags within a given state.
+#Could be used in conjunction with a sentiment analysis see how different areas in the US feel about different political buzzwords.
 
 import sys
 import json
@@ -25,11 +26,8 @@ def top_ten():
 				hash_count[tag] = hash_count[tag] + 1
 			else:
 				hash_count[tag] = 1
-	x = 0
 	for tags in hash_count:
-		if x < 10:
-			print str(tags) + " " + str(float(hash_count[tags]))
-		x = x + 1
+		print str(tags) + " " + str(float(hash_count[tags]))
 	tweet_file.close()
 
 top_ten()
